@@ -15,6 +15,7 @@ TODO
 ==========
  
 * build default attributes
+* add recipe's dependencies to metadata.rb
 * build attributes for arch download 
 * create templates
 * create files
