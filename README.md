@@ -14,9 +14,9 @@ At this time, DON'T WORKS 100%
 TODO
 ==========
  
-* build default attributes
+* build default attributes (DONE)
 * add recipe's dependencies to metadata.rb
-* build attributes for arch download 
+* build aseveral  ttributes for arch download 
 * create templates
 * create files
 * constraint to redhat family

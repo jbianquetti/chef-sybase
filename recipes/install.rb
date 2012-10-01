@@ -37,11 +37,11 @@ end
 
 # Download Sybase installer
 ark "sybase_installer" do
-  url "#{node['sybase']['url']['arch']}"
+  url "#{node['sybase']['url']}"
   path "#{node['sybase']['user']['homedir']}"
   owner "#{node['sybase']['user']}"
   group "#{node['sybase']['group']}" 
-  checksum "#{node['sybase']['url']['arch']['checksum']}"
+  checksum "#{node['sybase']['url']['checksum']}"
 end
 
 
