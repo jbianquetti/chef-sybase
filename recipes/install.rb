@@ -14,7 +14,6 @@ Chef::Log.info("watch out! SELINUX!!!!")
 # install dependencies 
 %w(libaio compat-libstdc++-33).each do |pkg|
     package pkg
-    action :install 
 end
 
 # Create sybase user
@@ -31,8 +30,8 @@ end
 
 # TODO:  Do somethig cool with sysctl.conf  maybe with Chef::File:Edit ! This is an horrible way !
 execute "Raising shared memory" do 
- command "echo kernel.shmmax= >> /etc/sysctl.conf && sysctl -p"
- not_if "grep kernel.shmmax"
+ command "echo kernel.shmmax = #{ node['sybase']['user']['shmmax'] } >> /etc/sysctl.conf && sysctl -p"
+ not_if "grep kernel.shmmax /etc/sysctl.conf"
 end
 
 # Download Sybase installer
@@ -69,6 +68,17 @@ template "response_file.txt" do
   action :create_if_missing
 end
 
+# Create directories for db devices  and logs
+%w{var/lib/sybase var/log}.each do  |dir|
+  directory "#{node['sybase']['user']['homedir']}/#{dir}" do
+    owner     node['sybase']['user']
+    group     node['sybase']['group'] 
+    action    :create
+    recursive true 
+  end 
+end 
+
+
 # fire up installer 
 # May cause problems with several installations over same user's homedir. 
 # Recommended setup is one install for user
@@ -76,10 +86,11 @@ end
 execute "installing sybase*" do 
     cwd  "#{node['sybase']['user']['homedir']}/sybase_installer" 
     command "./setup -console  -silent -file response_file.txt"
-    user     node['sybase']['user']
+    owner     node['sybase']['user']
     group     node['sybase']['group'] 
     not_if { node.attribute?('sybase_already_installed') }
 end
+
 
 # Configuring ASE Server
 # TODO: create a LWRP 
@@ -96,7 +107,7 @@ bash "Configuring ASE Server" do
   not_if { node.attribute?('sybase_already_installed') }
 end
 
-# Set up complete?
+# Set up complete? Possible hardcoded SYBASE DIR. Read from ENV
 if File.exist? "#{ node['sybase']['user']['homedir']}/sybase_installer/install/RUN_#{node['sybase']['user']['server']}.sh" 
    node.set['sybase_already_installed'] = true
    node.save

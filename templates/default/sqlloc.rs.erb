@@ -1,0 +1,25 @@
+sybinit.release_directory: USE_DEFAULT
+sqlsrv.server_name: <%= node['sybase']['user']['server'] %>
+sqlsrv.sa_login: sa
+sqlsrv.sa_password: <%= node['sybase']['sa_pass'] %>
+sqlsrv.default_language: USE_DEFAULT
+sqlsrv.language_install_list: USE_DEFAULT
+sqlsrv.language_remove_list: USE_DEFAULT
+sqlsrv.default_characterset: <%= node['sybase']['charset'] %>
+sqlsrv.characterset_install_list: USE_DEFAULT
+sqlsrv.characterset_remove_list: USE_DEFAULT
+sqlsrv.sort_order: <%= node['sybase']['sort_order'] %> 
+
+# An example sqlloc resource file...
+# sybinit.release_directory: USE_DEFAULT
+# sqlsrv.server_name: PUT_YOUR_SERVER_NAME_HERE
+# sqlsrv.sa_login: sa
+# sqlsrv.sa_password: 
+# sqlsrv.default_language: french
+# sqlsrv.language_install_list: spanish,german
+# sqlsrv.language_remove_list: USE_DEFAULT
+# sqlsrv.default_characterset: cp437
+# sqlsrv.characterset_install_list: mac,cp850
+# sqlsrv.characterset_remove_list: USE_DEFAULT
+# sqlsrv.sort_order: dictionary
+
