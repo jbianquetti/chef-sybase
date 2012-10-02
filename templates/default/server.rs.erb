@@ -1,26 +1,26 @@
 sybinit.release_directory: USE_DEFAULT
 sybinit.product: sqlsrv
-sqlsrv.server_name: <%= node['sybase']['user']['server'] %>
+sqlsrv.server_name: <%= node['sybase']['server'] %>
 sqlsrv.new_config: yes
 sqlsrv.do_add_server: yes
 sqlsrv.network_protocol_list: tcp
 sqlsrv.network_hostname_list: <%= node['fqdn'] %>
-sqlsrv.network_port_list: <%= node['sybase']['user']['server_port'] %>
+sqlsrv.network_port_list: <%= node['sybase']['server_port'] %>
 sqlsrv.application_type: USE_DEFAULT
 sqlsrv.server_page_size: USE_DEFAULT
 sqlsrv.force_buildmaster: no
-sqlsrv.master_device_physical_name:  <%= node['sybase']['user']['homedir'] %>/var/lib/sybase/master.dat
+sqlsrv.master_device_physical_name:  <%= node['sybase']['homedir'] %>/var/lib/sybase/master.dat
 sqlsrv.master_device_size: USE_DEFAULT
 sqlsrv.master_database_size: USE_DEFAULT
-sqlsrv.errorlog: <%= node['sybase']['user']['homedir'] %>/var/log/sybase.log
+sqlsrv.errorlog: <%= node['sybase']['homedir'] %>/var/log/sybase.log
 sqlsrv.do_upgrade: no
-sqlsrv.sybsystemprocs_device_physical_name: <%= node['sybase']['user']['homedir'] %>/var/lib/sybase/systemprocs.dat
+sqlsrv.sybsystemprocs_device_physical_name: <%= node['sybase']['homedir'] %>/var/lib/sybase/systemprocs.dat
 sqlsrv.sybsystemprocs_device_size: USE_DEFAULT
 sqlsrv.sybsystemprocs_database_size: USE_DEFAULT
-sqlsrv.sybsystemdb_device_physical_name: <%= node['sybase']['user']['homedir'] %>/var/lib/sybase/systemdb.dat
+sqlsrv.sybsystemdb_device_physical_name: <%= node['sybase']['homedir'] %>/var/lib/sybase/systemdb.dat
 sqlsrv.sybsystemdb_device_size: USE_DEFAULT
 sqlsrv.sybsystemdb_database_size: USE_DEFAULT
-sqlsrv.tempdb_device_physical_name: <%= node['sybase']['user']['homedir'] %>/var/lib/sybase/tempdb.dat
+sqlsrv.tempdb_device_physical_name: <%= node['sybase']['homedir'] %>/var/lib/sybase/tempdb.dat
 sqlsrv.tempdb_device_size: USE_DEFAULT
 sqlsrv.tempdb_database_size: USE_DEFAULT
 sqlsrv.default_backup_server: USE_DEFAULT

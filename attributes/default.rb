@@ -1,14 +1,16 @@
-default['sybase']['user'] = 'sybase' # default user 
-default['sybase']['group'] = 'sybase' # default group 
-default['sybase']['user']['homedir'] = '/opt/sybase'  # default $HOME
-default['sybase']['user']['shmmax'] = '67108864' # 32MB is the default shared memory max size # Sybase needs at least 64MB
-default['sybase']['user']['server'] = 'SYBASE' # Default ASE server name
-default['sybase']['user']['server_port'] = '5000' # Default ASE server name
+default['sybase']['user'] = "sybase" # default user 
+default['sybase']['group'] = "sybase" # default group 
+default['sybase']['homedir'] = "/home/sybase"  # default $HOME
+default['sybase']['shmmax'] = "67108864" # 32MB is the default shared memory max size # Sybase needs at least 64MB
+default['sybase']['server'] = "SYBASE" # Default ASE server name
+default['sybase']['server_port'] = "5000" # Default ASE server name
 default['sybase']['sybase_already_installed'] = false  # By default, this is false
-#default['sybase']['url'] = "http://vmsysbase.sadiel.es/distro/ase1503_linuxx86-64.tgz"  # INTERNAL URL to download sybase installer (version 15.0.3) (Only for deployment)
-default['sybase']['url'] = "http://download.sybase.com/eval/1503/ase1503_linuxx86-64.tgz" # URL  to 15.0.3
-default['sybase']['url']['checksum'] =  "273cda10eec9015491029347c1aaad24562b078766d968922707a3127309e0c8"  # sha256sum of sybase installer (version 15.0.3)
-#default['sybase']['url'] = "http://download.sybase.com/eval/157/ase157_linuxx86-64.tgz" # Url for 15.7
+#default['sybase']['url'] = "http://download.sybase.com/eval/1503/ase1503_linuxx86-64.tgz" # URL  to 15.0.3
+default['sybase']['url'] = "http://vmsysbase.sadiel.es/distro/ase1503_linuxx86.tgz"  # INTERNAL URL to download sybase installer (version 15.0.3) (Only for deployment)
+default['sybase']['checksum'] =  "b5eef9fa0b634082f4c3465ec2683bc08c44f804ab94087653d95eeccd7aaf22"  # sha256sum of sybase installer (version 15.0.3)
+
+
+#default['sybase']['url'] = "http://download.sybase.com/eval/157/ase157_linuxx86-64.tgz" # Url for 15.7, checksum yourself
 
 
 
