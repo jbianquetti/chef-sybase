@@ -1,0 +1,1532 @@
+################################################################################
+#
+# InstallShield Options File
+#
+# Wizard name: Setup
+# Wizard source: suite
+# Created on: Tue Oct 02 12:09:32 UTC 2012
+# Created by: InstallShield Options File Generator
+#
+# This file contains values that were specified during a recent execution of
+# Setup. It can be used to configure Setup with the options specified below when
+# the wizard is run with the "-options" command line option. Read each setting's
+# documentation for information on how to change its value.
+# 
+# A common use of an options file is to run the wizard in silent mode. This lets
+# the options file author specify wizard settings without having to run the
+# wizard in graphical or console mode. To use this options file for silent mode
+# execution, use the following command line arguments when running the wizard:
+# 
+#    -options "response_file.txt" -silent
+#
+################################################################################
+
+
+################################################################################
+#
+# Sybase Adaptive Server Enterprise Suite Install Location
+#
+# The install location of the product. Specify a valid directory into which the
+# product should be installed. If the directory contains spaces, enclose it in
+# double-quotes. For example, to install the product to C:\Program Files\My
+# Product, use
+# 
+#    -P installLocation="C:\Program Files\My Product"
+#
+
+
+-P installLocation="<%= node['sybase']['homedir'] %>"
+
+
+################################################################################
+#
+# Setup Type
+#
+# The setup type to be used when installing the product. Legal values are:
+# 
+#    typical - Typical: The program will be installed with the suggested
+#              configuration. Recommended for most users.
+#    full    - Full: The program will be installed with all the products and
+#              features.
+#    custom  - Custom: The program will be installed with the features you
+#              choose. Recommended for advanced users.
+# 
+# For example, to specify that the "Typical" setup type is selected, use
+# 
+#    -W setupTypes.selectedSetupTypeId=typical
+# 
+# You may also set the setup type to nothing by using
+# 
+#    -W setupTypes.selectedSetypTypeId=
+# 
+# This clears the current setup type and prevents any changes to the set of
+# selected features. Use this option whenever you set feature active states in
+# this options file. If you do not clear the selected setup type, the setup type
+# panel will override any changes you make to feature active states using this
+# file.
+#
+
+
+-W setupTypes.selectedSetupTypeId=typical
+
+
+################################################################################
+#
+# "Adaptive Server Enterprise" Feature
+#
+# The selection state of the "Adaptive Server Enterprise" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Adaptive Server Enterprise" for installation, use
+# 
+#    -P suite_srv_srv_ase.active=true
+#
+
+
+-P suite_srv_srv_ase.active=true
+
+
+################################################################################
+#
+# "ASE Diagnostic Server" Feature
+#
+# The selection state of the "ASE Diagnostic Server" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "ASE Diagnostic Server" for installation, use
+# 
+#    -P suite_srv_srv_ase_debug.active=true
+#
+
+
+-P suite_srv_srv_ase_debug.active=true
+
+
+################################################################################
+#
+# "ASE Agent Plugin" Feature
+#
+# The selection state of the "ASE Agent Plugin" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "ASE Agent Plugin" for installation, use
+# 
+#    -P suite_srv_ua_plugin.active=true
+#
+
+
+-P suite_srv_ua_plugin.active=true
+
+
+################################################################################
+#
+# "ASE SNMP Agent Plugin" Feature
+#
+# The selection state of the "ASE SNMP Agent Plugin" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "ASE SNMP Agent Plugin" for installation, use
+# 
+#    -P suite_srv_snmp_plugin.active=true
+#
+
+
+-P suite_srv_snmp_plugin.active=false
+
+
+################################################################################
+#
+# "Open Server" Feature
+#
+# The selection state of the "Open Server" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Open Server" for installation, use
+# 
+#    -P suite_srv_conn_os.active=true
+#
+
+
+-P suite_srv_conn_os.active=false
+
+
+################################################################################
+#
+# "English Language Module" Feature
+#
+# The selection state of the "English Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "English Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_en.active=true
+#
+
+
+-P suite_srv_ase_lang_en.active=false
+
+
+################################################################################
+#
+# "Replicator" Feature
+#
+# The selection state of the "Replicator" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Replicator" for installation, use
+# 
+#    -P suite_srv_srv_rpl.active=true
+#
+
+
+-P suite_srv_srv_rpl.active=true
+
+
+################################################################################
+#
+# "ASE Web Services" Feature
+#
+# The selection state of the "ASE Web Services" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "ASE Web Services" for installation, use
+# 
+#    -P suite_srv_srv_ws.active=true
+#
+
+
+-P suite_srv_srv_ws.active=false
+
+
+################################################################################
+#
+# "Job Scheduler" Feature
+#
+# The selection state of the "Job Scheduler" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Job Scheduler" for installation, use
+# 
+#    -P suite_srv_js.active=true
+#
+
+
+-P suite_srv_js.active=false
+
+
+################################################################################
+#
+# "core components" Feature
+#
+# The selection state of the "core components" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "core components" for installation, use
+# 
+#    -P suite_srv_product_root.active=true
+#
+
+
+-P suite_srv_product_root.active=false
+
+
+################################################################################
+#
+# "Chinese Language Module" Feature
+#
+# The selection state of the "Chinese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Chinese Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_zh.active=true
+#
+
+
+-P suite_srv_ase_lang_zh.active=false
+
+
+################################################################################
+#
+# "German Language Module" Feature
+#
+# The selection state of the "German Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "German Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_de.active=true
+#
+
+
+-P suite_srv_ase_lang_de.active=false
+
+
+################################################################################
+#
+# "French Language Module" Feature
+#
+# The selection state of the "French Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "French Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_fr.active=true
+#
+
+
+-P suite_srv_ase_lang_fr.active=false
+
+
+################################################################################
+#
+# "Japanese Language Module" Feature
+#
+# The selection state of the "Japanese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Japanese Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_ja.active=true
+#
+
+
+-P suite_srv_ase_lang_ja.active=false
+
+
+################################################################################
+#
+# "Spanish Language Module" Feature
+#
+# The selection state of the "Spanish Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Spanish Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_sp.active=true
+#
+
+
+-P suite_srv_ase_lang_sp.active=false
+
+
+################################################################################
+#
+# "Polish Language Module" Feature
+#
+# The selection state of the "Polish Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Polish Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_pl.active=true
+#
+
+
+-P suite_srv_ase_lang_pl.active=false
+
+
+################################################################################
+#
+# "Portuguese Language Module" Feature
+#
+# The selection state of the "Portuguese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Portuguese Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_po.active=true
+#
+
+
+-P suite_srv_ase_lang_po.active=false
+
+
+################################################################################
+#
+# "Korean Language Module" Feature
+#
+# The selection state of the "Korean Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Korean Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_ko.active=true
+#
+
+
+-P suite_srv_ase_lang_ko.active=false
+
+
+################################################################################
+#
+# "Thai Language Module" Feature
+#
+# The selection state of the "Thai Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Thai Language Module" for installation, use
+# 
+#    -P suite_srv_ase_lang_th.active=true
+#
+
+
+-P suite_srv_ase_lang_th.active=false
+
+
+################################################################################
+#
+# "Open Client" Feature
+#
+# The selection state of the "Open Client" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Open Client" for installation, use
+# 
+#    -P suite_conn_conn_oc.active=true
+#
+
+
+-P suite_conn_conn_oc.active=true
+
+
+################################################################################
+#
+# "Common ctlib files" Feature
+#
+# The selection state of the "Common ctlib files" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Common ctlib files" for installation, use
+# 
+#    -P suite_conn_conn_oc_ctlib.active=true
+#
+
+
+-P suite_conn_conn_oc_ctlib.active=true
+
+
+################################################################################
+#
+# "Common dblib files" Feature
+#
+# The selection state of the "Common dblib files" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Common dblib files" for installation, use
+# 
+#    -P suite_conn_conn_oc_dblib.active=true
+#
+
+
+-P suite_conn_conn_oc_dblib.active=true
+
+
+################################################################################
+#
+# "Embedded SQL/C" Feature
+#
+# The selection state of the "Embedded SQL/C" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Embedded SQL/C" for installation, use
+# 
+#    -P suite_conn_conn_sqlc.active=true
+#
+
+
+-P suite_conn_conn_sqlc.active=false
+
+
+################################################################################
+#
+# "Embedded SQL/Cobol" Feature
+#
+# The selection state of the "Embedded SQL/Cobol" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Embedded SQL/Cobol" for installation, use
+# 
+#    -P suite_conn_conn_sqlcobol.active=true
+#
+
+
+-P suite_conn_conn_sqlcobol.active=false
+
+
+################################################################################
+#
+# "Monitor Client Library" Feature
+#
+# The selection state of the "Monitor Client Library" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Monitor Client Library" for installation, use
+# 
+#    -P suite_conn_conn_mcl.active=true
+#
+
+
+-P suite_conn_conn_mcl.active=false
+
+
+################################################################################
+#
+# "Common Connectivity Components" Feature
+#
+# The selection state of the "Common Connectivity Components" feature. Legal
+# values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Common Connectivity Components" for installation, use
+# 
+#    -P suite_conn_product_root.active=true
+#
+
+
+-P suite_conn_product_root.active=false
+
+
+################################################################################
+#
+# "English Language Module" Feature
+#
+# The selection state of the "English Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "English Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_en.active=true
+#
+
+
+-P suite_conn_ocs_lang_en.active=true
+
+
+################################################################################
+#
+# "Chinese Language Module" Feature
+#
+# The selection state of the "Chinese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Chinese Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_zh.active=true
+#
+
+
+-P suite_conn_ocs_lang_zh.active=false
+
+
+################################################################################
+#
+# "German Language Module" Feature
+#
+# The selection state of the "German Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "German Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_de.active=true
+#
+
+
+-P suite_conn_ocs_lang_de.active=false
+
+
+################################################################################
+#
+# "French Language Module" Feature
+#
+# The selection state of the "French Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "French Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_fr.active=true
+#
+
+
+-P suite_conn_ocs_lang_fr.active=false
+
+
+################################################################################
+#
+# "Japanese Language Module" Feature
+#
+# The selection state of the "Japanese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Japanese Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_ja.active=true
+#
+
+
+-P suite_conn_ocs_lang_ja.active=false
+
+
+################################################################################
+#
+# "Spanish Language Module" Feature
+#
+# The selection state of the "Spanish Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Spanish Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_sp.active=true
+#
+
+
+-P suite_conn_ocs_lang_sp.active=false
+
+
+################################################################################
+#
+# "Polish Language Module" Feature
+#
+# The selection state of the "Polish Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Polish Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_pl.active=true
+#
+
+
+-P suite_conn_ocs_lang_pl.active=false
+
+
+################################################################################
+#
+# "Portuguese Language Module" Feature
+#
+# The selection state of the "Portuguese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Portuguese Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_po.active=true
+#
+
+
+-P suite_conn_ocs_lang_po.active=false
+
+
+################################################################################
+#
+# "Korean Language Module" Feature
+#
+# The selection state of the "Korean Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Korean Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_ko.active=true
+#
+
+
+-P suite_conn_ocs_lang_ko.active=false
+
+
+################################################################################
+#
+# "Thai Language Module" Feature
+#
+# The selection state of the "Thai Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Thai Language Module" for installation, use
+# 
+#    -P suite_conn_ocs_lang_th.active=true
+#
+
+
+-P suite_conn_ocs_lang_th.active=false
+
+
+################################################################################
+#
+# "ASE ODBC Driver" Feature
+#
+# The selection state of the "ASE ODBC Driver" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "ASE ODBC Driver" for installation, use
+# 
+#    -P suite_platconn_ase_odbc.active=true
+#
+
+
+-P suite_platconn_ase_odbc.active=true
+
+
+################################################################################
+#
+# "Unicode/MultiByte Conversion Support" Feature
+#
+# The selection state of the "Unicode/MultiByte Conversion Support" feature.
+# Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Unicode/MultiByte Conversion Support" for
+# installation, use
+# 
+#    -P suite_platconn_ase_odbc_conv.active=true
+#
+
+
+-P suite_platconn_ase_odbc_conv.active=true
+
+
+################################################################################
+#
+# "Sample Programs" Feature
+#
+# The selection state of the "Sample Programs" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Sample Programs" for installation, use
+# 
+#    -P suite_platconn_ase_odbc_sample.active=true
+#
+
+
+-P suite_platconn_ase_odbc_sample.active=true
+
+
+################################################################################
+#
+# "Chinese Language Module" Feature
+#
+# The selection state of the "Chinese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Chinese Language Module" for installation, use
+# 
+#    -P suite_lang_lang_zh.active=true
+#
+
+
+-P suite_lang_lang_zh.active=false
+
+
+################################################################################
+#
+# "German Language Module" Feature
+#
+# The selection state of the "German Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "German Language Module" for installation, use
+# 
+#    -P suite_lang_lang_de.active=true
+#
+
+
+-P suite_lang_lang_de.active=false
+
+
+################################################################################
+#
+# "French Language Module" Feature
+#
+# The selection state of the "French Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "French Language Module" for installation, use
+# 
+#    -P suite_lang_lang_fr.active=true
+#
+
+
+-P suite_lang_lang_fr.active=false
+
+
+################################################################################
+#
+# "Japanese Language Module" Feature
+#
+# The selection state of the "Japanese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Japanese Language Module" for installation, use
+# 
+#    -P suite_lang_lang_ja.active=true
+#
+
+
+-P suite_lang_lang_ja.active=false
+
+
+################################################################################
+#
+# "Spanish Language Module" Feature
+#
+# The selection state of the "Spanish Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Spanish Language Module" for installation, use
+# 
+#    -P suite_lang_lang_sp.active=true
+#
+
+
+-P suite_lang_lang_sp.active=false
+
+
+################################################################################
+#
+# "Polish Language Module" Feature
+#
+# The selection state of the "Polish Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Polish Language Module" for installation, use
+# 
+#    -P suite_lang_lang_pl.active=true
+#
+
+
+-P suite_lang_lang_pl.active=false
+
+
+################################################################################
+#
+# "Portuguese Language Module" Feature
+#
+# The selection state of the "Portuguese Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Portuguese Language Module" for installation, use
+# 
+#    -P suite_lang_lang_po.active=true
+#
+
+
+-P suite_lang_lang_po.active=false
+
+
+################################################################################
+#
+# "Korean Language Module" Feature
+#
+# The selection state of the "Korean Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Korean Language Module" for installation, use
+# 
+#    -P suite_lang_lang_ko.active=true
+#
+
+
+-P suite_lang_lang_ko.active=false
+
+
+################################################################################
+#
+# "Thai Language Module" Feature
+#
+# The selection state of the "Thai Language Module" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Thai Language Module" for installation, use
+# 
+#    -P suite_lang_lang_th.active=true
+#
+
+
+-P suite_lang_lang_th.active=false
+
+
+################################################################################
+#
+# "English Language Module" Feature
+#
+# The selection state of the "English Language Module" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "English Language Module" for installation, use
+# 
+#    -P suite_lang_product_root.active=true
+#
+
+
+-P suite_lang_product_root.active=true
+
+
+################################################################################
+#
+# "Free Utilities for jConnect" Feature
+#
+# The selection state of the "Free Utilities for jConnect" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Free Utilities for jConnect" for installation, use
+# 
+#    -P suite_jconnect_jconnect_jutils.active=true
+#
+
+
+-P suite_jconnect_jconnect_jutils.active=false
+
+
+################################################################################
+#
+# "jISQL" Feature
+#
+# The selection state of the "jISQL" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "jISQL" for installation, use
+# 
+#    -P suite_jconnect_jconnect_jutils_jisql.active=true
+#
+
+
+-P suite_jconnect_jconnect_jutils_jisql.active=false
+
+
+################################################################################
+#
+# "RIBO" Feature
+#
+# The selection state of the "RIBO" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "RIBO" for installation, use
+# 
+#    -P suite_jconnect_jconnect_jutils_ribo.active=true
+#
+
+
+-P suite_jconnect_jconnect_jutils_ribo.active=false
+
+
+################################################################################
+#
+# "JDBC Driver" Feature
+#
+# The selection state of the "JDBC Driver" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "JDBC Driver" for installation, use
+# 
+#    -P suite_jconnect_product_root.active=true
+#
+
+
+-P suite_jconnect_product_root.active=true
+
+
+################################################################################
+#
+# "JRE 1.6" Feature
+#
+# The selection state of the "JRE 1.6" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "JRE 1.6" for installation, use
+# 
+#    -P suite_shared_jre16_linuxia32.active=true
+#
+
+
+-P suite_shared_jre16_linuxia32.active=false
+
+
+################################################################################
+#
+# "Shared LIB" Feature
+#
+# The selection state of the "Shared LIB" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Shared LIB" for installation, use
+# 
+#    -P suite_shared_shared_lib.active=true
+#
+
+
+-P suite_shared_shared_lib.active=false
+
+
+################################################################################
+#
+# "Shared JAVA" Feature
+#
+# The selection state of the "Shared JAVA" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Shared JAVA" for installation, use
+# 
+#    -P suite_shared_shared_java.active=true
+#
+
+
+-P suite_shared_shared_java.active=false
+
+
+################################################################################
+#
+# "SySAM License Utilities 2.1" Feature
+#
+# The selection state of the "SySAM License Utilities 2.1" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "SySAM License Utilities 2.1" for installation, use
+# 
+#    -P suite_sysam_sysam_util.active=true
+#
+
+
+-P suite_sysam_sysam_util.active=true
+
+
+################################################################################
+#
+# "Unified Agent Server" Feature
+#
+# The selection state of the "Unified Agent Server" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Unified Agent Server" for installation, use
+# 
+#    -P suite_ua_ua_srv.active=true
+#
+
+
+-P suite_ua_ua_srv.active=true
+
+
+################################################################################
+#
+# "Agent Management Console" Feature
+#
+# The selection state of the "Agent Management Console" feature. Legal values
+# are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Agent Management Console" for installation, use
+# 
+#    -P suite_ua_ua_amc.active=true
+#
+
+
+-P suite_ua_ua_amc.active=true
+
+
+################################################################################
+#
+# "Interactive SQL" Feature
+#
+# The selection state of the "Interactive SQL" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Interactive SQL" for installation, use
+# 
+#    -P suite_admintools_dbisql.active=true
+#
+
+
+-P suite_admintools_dbisql.active=true
+
+
+################################################################################
+#
+# "Sybase Central" Feature
+#
+# The selection state of the "Sybase Central" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Sybase Central" for installation, use
+# 
+#    -P suite_admintools_admintools_sc.active=true
+#
+
+
+-P suite_admintools_admintools_sc.active=true
+
+
+################################################################################
+#
+# "Sybase Central Core" Feature
+#
+# The selection state of the "Sybase Central Core" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Sybase Central Core" for installation, use
+# 
+#    -P suite_admintools_admintools_sc_core.active=true
+#
+
+
+-P suite_admintools_admintools_sc_core.active=false
+
+
+################################################################################
+#
+# "Adaptive Server Plugin" Feature
+#
+# The selection state of the "Adaptive Server Plugin" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Adaptive Server Plugin" for installation, use
+# 
+#    -P suite_admintools_admintools_asep.active=true
+#
+
+
+-P suite_admintools_admintools_asep.active=true
+
+
+################################################################################
+#
+# "SySAM Plugin" Feature
+#
+# The selection state of the "SySAM Plugin" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "SySAM Plugin" for installation, use
+# 
+#    -P suite_admintools_sysamp.active=true
+#
+
+
+-P suite_admintools_sysamp.active=true
+
+
+################################################################################
+#
+# "QPTune" Feature
+#
+# The selection state of the "QPTune" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "QPTune" for installation, use
+# 
+#    -P suite_admintools_qptune.active=true
+#
+
+
+-P suite_admintools_qptune.active=true
+
+
+################################################################################
+#
+# "core components" Feature
+#
+# The selection state of the "core components" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "core components" for installation, use
+# 
+#    -P suite_admintools_product_root.active=true
+#
+
+
+-P suite_admintools_product_root.active=false
+
+
+################################################################################
+#
+# "Third Party Files" Feature
+#
+# The selection state of the "Third Party Files" feature. Legal values are:
+# 
+#    true  - Indicates that the feature is selected for installation
+#    false - Indicates that the feature is not selected for installation
+# 
+# For example, to select "Third Party Files" for installation, use
+# 
+#    -P suite_third_party_third_party_files.active=true
+#
+
+
+-P suite_third_party_third_party_files.active=true
+
+
+################################################################################
+#
+# Product Licenses
+#
+# What would you like to do?
+# 
+#    license   - Install licensed copy of Sybase Adaptive Server Enterprise
+#                Suite
+#    developer - Install Free Developer Edition of Sybase Adaptive Server
+#                Enterprise Suite
+#    express   - Install Express Edition of Sybase Adaptive Server Enterprise
+#                Suite
+#    evaluate  - Evaluate Sybase Adaptive Server Enterprise Suite
+#
+
+
+-W installSoftwareLicenseType.type=developer
+
+
+################################################################################
+#
+# Sybase Software Asset Management License
+#
+# Sybase Data Integration Suite requires Sybase Software Asset Management
+# (SySAM) license key(s). If you have not yet obtained the license key(s), go to
+# SPDC at http://sybase.subscribenet.com to obtain the license keys.
+# 
+# You can specify the license file or license server where the license key(s)
+# were previously deployed.
+# 
+#    -W sysamLicense.proceedWithoutLicense    - Select this if you want to
+#                                               continue installation without a
+#                                               license key.
+#    -W sysamLicense.useExistingLicenseServer - Valid values are "true" or
+#                                               "false". Set to "true" if you
+#                                               want to use previously deployed
+#                                               license server or "false" if
+#                                               want to specify the license
+#                                               file.
+#    -W sysamLicense.licenseFile              - Specify the Sybase Software
+#                                               Asset Management license file.
+#    -W sysamLicense.licenseServerHostName    - Enter the hostname where the
+#                                               license server was deployed.
+#    -W sysamLicense.licenseServerPortNumber  - Enter the license server port
+#                                               number. Leave the entry blank
+#                                               if you want to use the default
+#                                               port numbers.
+#
+
+
+-W sysamLicense.proceedWithoutLicense=false
+-W sysamLicense.useExistingLicenseServer=false
+-W sysamLicense.licenseFile=
+### -W sysamLicense.licenseServerHostName=localhost
+### -W sysamLicense.licenseServerPortNumber=
+
+
+################################################################################
+#
+#
+# Please select the product edition you would like to configure. For Enterprise
+# and Small Business Editions, you also need to select the license type for this
+# installation.
+# 
+#    sysamProductType.productEdition - Valid values are "Enterprise Edition",
+#                                      "Small Business Edition", "Developer
+#                                      Edition", or "Unknown".
+#    sysamProductType.licenseType    - Valid values are:
+#    For Enterprise Edition          - "Unknown", "CP : CPU License", "SF :
+#                                      Standby CPU License", "SR : Server
+#                                      License", "SV : Standby Server License",
+#                                      "DT : Development & Test License", "EV :
+#                                      Evaluation License", "OT : Other
+#                                      License", "SS : Standalone Seat
+#                                      License", "DV : Developer License", "NA
+#                                      : Not Applicable or Other License", "AC
+#                                      : OEM Application Deployment CPU
+#                                      License", "BC : OEM Application
+#                                      Deployment Standby CPU License", "AR :
+#                                      OEM Application Deployment Server
+#                                      License", "BR : OEM Application
+#                                      Deployment Standby Server License", "AO
+#                                      : OEM Application Deployment Other
+#                                      License", "LP : Application Specific CPU
+#                                      License License", "LF : Application
+#                                      Specific Standby CPU License", "LR :
+#                                      Application Specific Server License", or
+#                                      "LV : Application Specific Standby
+#                                      Server License".
+#    For Small Business Edition      - "Unknown", "CP : CPU License", "SF :
+#                                      Standby CPU License", "SR : Server
+#                                      License", "SV : Standby Server License",
+#                                      "DT : Development & Test License", "EV :
+#                                      Evaluation License", "OT : Other
+#                                      License", "SS : Standalone Seat
+#                                      License", "DV : Developer License", "NA
+#                                      : Not Applicable or Other License", "AC
+#                                      : OEM Application Deployment CPU
+#                                      License", "BC : OEM Application
+#                                      Deployment Standby CPU License", "AR :
+#                                      OEM Application Deployment Server
+#                                      License", "BR : OEM Application
+#                                      Deployment Standby Server License", "AO
+#                                      : OEM Application Deployment Other
+#                                      License", "LP : Application Specific CPU
+#                                      License License", "LF : Application
+#                                      Specific Standby CPU License", "LR :
+#                                      Application Specific Server License",
+#                                      "LV : Application Specific Standby
+#                                      Server License", or "DH : Development
+#                                      and Testing Chip License".
+#
+
+
+-W sysamProductType.productEdition="Developer Edition"
+-W sysamProductType.licenseType="SR :  Server License"
+
+
+################################################################################
+#
+#
+# Please configure the Sybase Software Asset Management (SySAM) email alert
+# mechanism. When configured, specified recipients will receive email
+# notifications about SySAM events that may need administrator attention.
+# 
+#    sysamNotification.emailSeverity - Valid values are "INFORMATIONAL",
+#                                      "WARNING", or "ERROR".
+#
+
+
+-W sysamNotification.enableNotification=true
+-W sysamNotification.smtpHostName=smtp
+-W sysamNotification.smtpPortNumber=25
+-W sysamNotification.emailSender=
+-W sysamNotification.emailRecipients=
+-W sysamNotification.emailSeverity=WARNING
+
+
+################################################################################
+#
+# User Input Field - enable
+#
+# ASE Plug-in has the option to "remember passwords after connecting to
+# servers". The passwords are encrypted and stored on a per-user basis. If for
+# security reasons you do not want ASE Plug-in to store any passwords, you can
+# disable this feature.
+# 
+# Do you want to enable the "remember password" feature in ASE Plug-in?
+# 
+#    true  - Enable "Remember Password" feature in ASE Plug-in
+#    false - Disable "Remember Password" feature in ASE Plug-in
+#
+
+
+-W asepRememberPassword.enable="true"
+
+
+################################################################################
+#
+# Configure New Servers
+#
+# Please deselect any products that you do not want to configure now :
+# 
+#    true  - Indicates that new server to be configured
+#    false - Indicates that new server not to be configured
+#    NOTE  - In order to configure any of these servers, you must install the
+#            products or features.
+#
+
+
+-W askConfig.configureAse=true
+-W askConfig.configureBackup=true
+-W askConfig.configureMonitor=true
+-W askConfig.configureXp=true
+-W askConfig.configureUnifiedAgent=true
+
+
+################################################################################
+#
+# Unified Agent - Self Discovery Service Adaptor
+#
+# Discovery Services provide client applications the ability to find Sybase
+# resources within an enterprise environment without the need for local
+# interface file definitions. UA currently supports two discovery methods: JINI
+# and UDP. JINI requires a dedicated JINI server to provide discovery services
+# and can provide these services throughout the enterprise. UDP does not require
+# a dedicated server but is limited to discovery within the local subnet.
+#
+
+
+-W config_ua_ds.selfDiscoveryService=com.sybase.ua.services.discovery.SelfDiscoveryServiceUDPAdaptor
+-W config_ua_ds.hostName=localhost
+-W config_ua_ds.portNumber=4160
+
+
+################################################################################
+#
+# Unified Agent - Security Login Modules
+#
+# Please select and order the security login modules for the Unified Agent.
+# Simple Login: authenticates user ID/password against entries within a UA
+# configuration file. ASE Login Module: delegates authenticationto an
+# appropriate role (e.g., sa_role, sso_role, etc.) within the ASE. NT/Unix Proxy
+# login Module: delegates authentication to a user group in the underlying
+# operating system (e.g., Administrators, root, etc.).
+# 
+#    config_ua_login_modules.simpleActive   - A comma separated list of active
+#                                             Simple Login modules. Values are
+#                                             "true" and/or "false".
+#    config_ua_login_modules.simpleUserName - A comma separated list of user
+#                                             names for Simple Login Modules.
+#    config_ua_login_modules.simplePassword - A comma separated list of
+#                                             password for Simple Login
+#                                             modules.
+#    config_ua_login_modules.ntunixActive   - Enter "true" or "false" to enable
+#                                             or disable NT/Unix Proxy Login
+#                                             Module
+#    config_ua_login_modules.aseActive      - Enter "true" or "false" to enable
+#                                             or disable ASE Login Module
+#    config_ua_login_modules.moduleOrder    - Enter "SIMPLE, ASE, NT" for
+#                                             Windows or "UNIX, ASE, SIMPLE"
+#                                             for Unix to order the security
+#                                             login modules
+#
+
+
+-W config_ua_login_modules.simpleActive=true
+-W config_ua_login_modules.simpleUserName=uafadmin
+-W config_ua_login_modules.simplePassword=Sybase4me
+-W config_ua_login_modules.ntunixActive=true
+-W config_ua_login_modules.aseActive=true
+-W config_ua_login_modules.moduleOrder=
