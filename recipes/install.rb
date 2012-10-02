@@ -88,7 +88,7 @@ end
 # Copy this recipe  and add a first line: node['sybase']['user'] = "some_other_username" 
 execute "installing sybase" do 
     cwd  "#{node['sybase']['homedir']}/sybase_installer" 
-    command "./setup -silent -options  #{node['sybase']['homedir']}/sybase_installer/response_file.txt -W SybaseLicense.agree=true"
+    command "./setup -is:javaconsole -silent -options #{node['sybase']['homedir']}/sybase_installer/response_file.txt  -W SybaseLicense.agreeToLicense=tru
     user      "#{node['sybase']['user']}"
     group     "#{node['sybase']['group']}"
     creates "#{ node['sybase']['homedir']}/SYBASE.sh"  
@@ -107,12 +107,12 @@ bash "Configuring ASE Server" do
         srvbuildres -r   "#{node['sybase']['homedir']}/sybase_installer/server.rs"
         sqllocres -r   "#{node['sybase']['homedir']}/sybase_installer/sqlloc.rs"     
       EOH
-  creates "#{ node['sybase']['homedir']}/sybase_installer/install/RUN_#{node['sybase']['server']}.sh"  
+  creates "#{ node['sybase']['homedir']}/ASE-15_0/install/RUN_#{node['sybase']['server']}"  
   not_if { node.attribute?('sybase_already_installed') }
 end
 
 # Set up complete? Possible hardcoded SYBASE DIR. Read from ENV
-if File.exist? "#{ node['sybase']['homedir']}/sybase_installer/install/RUN_#{node['sybase']['server']}.sh" 
+if File.exist? "#{ node['sybase']['homedir']}/ASE-15_0/install/RUN_#{node['sybase']['server']}" 
    node.set['sybase_already_installed'] = true
    node.save
 end 
