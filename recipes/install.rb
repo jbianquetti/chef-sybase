@@ -88,25 +88,26 @@ end
 # Copy this recipe  and add a first line: node['sybase']['user'] = "some_other_username" 
 execute "installing sybase" do 
     cwd  "#{node['sybase']['homedir']}/sybase_installer" 
-    command "./setup -is:javaconsole -silent -options #{node['sybase']['homedir']}/sybase_installer/response_file.txt  -W SybaseLicense.agreeToLicense=tru
+    command "./setup -is:javaconsole -silent -options #{node['sybase']['homedir']}/sybase_installer/response_file.txt  -W SybaseLicense.agreeToLicense=true"
     user      "#{node['sybase']['user']}"
     group     "#{node['sybase']['group']}"
     creates "#{ node['sybase']['homedir']}/SYBASE.sh"  
     not_if { node.attribute?('sybase_already_installed') }
 end
 
+template "srvbuild.sh" do
+  source "srvbuild.sh.erb"
+  path   "#{node['sybase']['homedir']}/srvbuild.sh" 
+  mode   "755"
+  action :create_if_missing
+end
 
 # Configuring ASE Server
-# TODO: create a LWRP 
-# ~/SYBASE.sh uses too much env keys for use with rubys' ENV, I prefer handling it with a bash resource
-bash "Configuring ASE Server" do
-  user "#{node['sybase']['user']}"
-  code <<-EOH 
-        set -e 
-        source  ~/SYBASE.sh
-        srvbuildres -r   "#{node['sybase']['homedir']}/sybase_installer/server.rs"
-        sqllocres -r   "#{node['sybase']['homedir']}/sybase_installer/sqlloc.rs"     
-      EOH
+execute "Configuring ASE Server" do
+  cwd  "#{node['sybase']['homedir']}" 
+  command "./srvbuild.sh"
+  user      "#{node['sybase']['user']}"
+  group     "#{node['sybase']['group']}"
   creates "#{ node['sybase']['homedir']}/ASE-15_0/install/RUN_#{node['sybase']['server']}"  
   not_if { node.attribute?('sybase_already_installed') }
 end
@@ -123,14 +124,11 @@ end
 # one script per user 
 template "sybase-#{node['sybase']['server']}" do
 	source "sybase.init.erb"
-        path   "/etc/init.d"
+        path   "/etc/init.d/sybase-#{node['sybase']['server']}"
         mode    "755"
-	variables(
-	  :server => node['sybase']['server']
-	)
 end
 
-service "sybase-#{node['sybase']['user']}" do
+service "sybase-#{node['sybase']['server']}" do
   supports :status => false, :restart => false, :reload => false
   action [ :enable, :start ]
 end
