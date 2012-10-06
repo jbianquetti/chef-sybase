@@ -48,7 +48,7 @@ start() {
 
 stop() {
 	echo -n $"Stopping ${BASENAME} service: "
-	$SU -l sybase -c ". $SYBASE/SYBASE.sh; $SYBASE/$SYBASE_OCS/bin/isql -S $SYBASE_SERVER -U sa -P '' < $SYBASE_ASE/upgrade/shutdown.sql > /dev/null"
+	$SU -l sybase -c ". $SYBASE/SYBASE.sh; $SYBASE/$SYBASE_OCS/bin/isql -S $SYBASE_SERVER -U sa -P '<%= node['sybase']['sa_pass']  %>' < $SYBASE_ASE/upgrade/shutdown.sql > /dev/null"
 	ret=$?
 	if [ $ret -eq 0 ]
 	then
