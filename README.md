@@ -14,6 +14,13 @@ If you logs with sybase user,  execute "source ~/SYBASE.sh" before any further a
 After that, if you still have problems when executing "isql", these are caused by LANG environment settings
 Use LANG=C and every works again.
 
+USE
+==========
+
+Use sybase::install1503 to install Sybase 15.0.3 :  Recipe install1503.rb 
+Use sybase::install157  to install Sybase 15.7   :  Recipe install157.rb
+
+
 TODO
 ==========
  

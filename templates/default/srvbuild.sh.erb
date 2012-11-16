@@ -2,4 +2,5 @@
 set -e 
 source  <%= node['sybase']['homedir'] %>/SYBASE.sh 
 srvbuildres -r  <%= node['sybase']['homedir'] %>/sybase_installer/server.rs 
+srvbuildres -r  <%= node['sybase']['homedir'] %>/sybase_installer/bsrv.rs
 sqllocres -r   <%= node['sybase']['homedir'] %>/sybase_installer/sqlloc.rs 
