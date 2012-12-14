@@ -26,17 +26,16 @@ TODO
  
 * build default attributes (DONE)
 * add recipe's dependencies to metadata.rb (DONE)
-* build several  attributes for arch and version download 
+* build several  attributes for arch and version download  (TODO)
 * create templates (DONE)
 * create files (DONE)
 * constraint to redhat family (DONE)
-* Do somethig cool with sysctl.conf  This is an horrible way, but has no dependencies.
-* Integrate with Opscode's database cookbook
-* use minitest, Luke!
-* build Readme.md and TODO.md 
+* Do somethig cool with sysctl.conf  This is an horrible way, but has no dependencies. 
+* Integrate with Opscode's database cookbook (WIP)
+* use minitest, Luke! (DONE)
+* build Readme.md and TODO.md  (DONE)
 * Readme.md examples
 * Try to build attributes for ASE Editions (Developer, Enterprise,..) (Wrong! use response_file.txt.erb template)
-* try to run over others OS
-* add roles capabilities
-
+* try to run over others OS (TBD)
+* add roles capabilities (TBD)
 
